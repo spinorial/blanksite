@@ -1,0 +1,6 @@
+# Dotenv
+.env
+
+#Compiled CSS and Javascript
+
+web/app/themes/neurocases/public
