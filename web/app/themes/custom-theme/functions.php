@@ -41,5 +41,17 @@ function bootstrap_script() {
 }
 add_action('wp_enqueue_scripts', 'bootstrap_script');
 
+// Register React
+
+function react_script() {
+   
+    global $publicDir;
+    
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', $publicDir . 'js/react.development.js', array(), null, true);
+    
+}
+add_action('wp_enqueue_scripts', 'bootstrap_script');
+
 
 ?>

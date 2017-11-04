@@ -9,7 +9,7 @@ var gulp  = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('default', [
-  'jquery_assets','bootstrap_assets','build-css'
+  'jquery_assets','bootstrap_assets','build-css','react_assets'
 ]);
 
 
@@ -24,6 +24,12 @@ gulp.task('jquery_assets', function () {
 
 gulp.task('bootstrap_assets', function(){
 	gulp.src(nodeModulesDir + 'bootstrap/dist/js/bootstrap.js').pipe(gulp.dest(publicDir +'/js'));
+})
+
+//React Setup
+
+gulp.task('react_assets', function(){
+	gulp.src(nodeModulesDir + 'react/cjs/react.development.js').pipe(gulp.dest(publicDir +'/js'));
 })
 
 
