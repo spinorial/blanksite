@@ -17,6 +17,29 @@ function my_theme_enqueue_styles() {
 
 }
 
+// Deregister WP JQuery and add latest JQuery
 
-// Deregister WP JQuery and Add latest
+function jquery_script() {
+   
+    global $publicDir;
+    
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', $publicDir . 'js/jquery.js', array(), null, true);
+    
+}
+add_action('wp_enqueue_scripts', 'jquery_script');
+
+// Register Bootstrap
+
+function bootstrap_script() {
+   
+    global $publicDir;
+    
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', $publicDir . 'js/bootstrap.js', array(), null, true);
+    
+}
+add_action('wp_enqueue_scripts', 'bootstrap_script');
+
+
 ?>
